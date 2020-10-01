@@ -1,0 +1,38 @@
+﻿@model İnternetProgramlamaFilmProjesi.Models.post
+@{
+    ViewBag.Title = "PostsDelete";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<h2>Yorum Silme</h2>
+<h3>Bu yorumu silmek ister misiniz?</h3>
+<div>
+    <table class="col-md-12" style="text-align:left">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.kullanici) : </th>
+            <td>@Html.DisplayFor(model => model.kullanici)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.tarih) : </th>
+            <td>@Html.DisplayFor(model => model.tarih)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.yorum) : </th>
+            <td>@Html.DisplayFor(model => model.yorum)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.onay) : </th>
+            <td>@Html.DisplayFor(model => model.onay)</td>
+        </tr>
+    </table>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Listeye Geri Dön", "Posts")
+        </div>
+    }
+</div>
+

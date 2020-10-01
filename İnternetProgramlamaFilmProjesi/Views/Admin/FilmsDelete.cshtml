@@ -1,0 +1,66 @@
+﻿@model İnternetProgramlamaFilmProjesi.Models.film
+@{
+    ViewBag.Title = "FilmsDelete";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<h2>Film Silme</h2>
+<h3>Bu filmi silmek ister misiniz?</h3>
+<div>
+    <table class="col-md-12" style="text-align:left">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.fragman_width) : </th>
+            <td>@Html.DisplayFor(model => model.fragman_width)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.fragman_height) : </th>
+            <td>@Html.DisplayFor(model => model.fragman_height)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.fragman_iframe) : </th>
+            <td>@Html.DisplayFor(model => model.fragman_iframe)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.fragman_frameborder) : </th>
+            <td>@Html.DisplayFor(model => model.fragman_frameborder)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.film_width) : </th>
+            <td>@Html.DisplayFor(model => model.film_width)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.film_height) : </th>
+            <td>@Html.DisplayFor(model => model.film_height)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.film_iframe) : </th>
+            <td>@Html.DisplayFor(model => model.film_iframe)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.film_frameborder) : </th>
+            <td>@Html.DisplayFor(model => model.film_frameborder)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.acilklama) : </th>
+            <td>@Html.DisplayFor(model => model.acilklama)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.resim) : </th>
+            <td>@Html.DisplayFor(model => model.resim)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.film_adi) : </th>
+            <td>@Html.DisplayFor(model => model.film_adi)</td>
+        </tr>
+    </table>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Listeye Geri Dön", "Films")
+        </div>
+    }
+</div>
+

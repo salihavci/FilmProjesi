@@ -1,0 +1,24 @@
+﻿@model IEnumerable<İnternetProgramlamaFilmProjesi.Models.post>
+@{
+    ViewBag.Title = "PostRead";
+    Layout = "~/Views/_Girisli.cshtml";
+}
+
+<h2>Yorum Okuma</h2>
+@foreach (var item in Model)
+{
+    if(item.onay != 0) { 
+    <div class="col-md-12">
+        <div class="col-md-4"><b>Kullanıcı Adı </b></div>
+        <div class="col-md-1"><b>:</b></div>
+        <div class="col-md-7">@item.kullanici</div>
+        <div class="col-md-4"><b>Yorum </b></div>
+        <div class="col-md-1"><b>:</b></div>
+        <div class="col-md-7">@item.yorum</div>
+        <div class="col-md-4"><b>Yayınlanma Tarihi </b></div>
+        <div class="col-md-1"><b>:</b></div>
+        <div class="col-md-7"><b>@item.tarih</b></div>
+    </div>
+    <div class="col-md-12" style="height:25px;"></div>
+    }
+}

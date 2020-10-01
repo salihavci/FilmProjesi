@@ -1,0 +1,15 @@
+﻿@model IEnumerable<İnternetProgramlamaFilmProjesi.Models.film>
+@{
+    ViewBag.Title = "Films";
+    Layout = "~/Views/_Girisli.cshtml";
+}
+
+<h2>Filmler</h2>
+<div class="col-md-12">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4"><img style="margin-left:auto; margin-right:auto; border-radius:25px;" src="~/images/@item.resim" width="250" height="300" /><div style="clear:none;"></div><div class="col-md-4" style="width:250px; text-align:center;">@Html.ActionLink(item.film_adi,"FilmDetails",new { id = item.id})</div></div>
+    }
+   
+</div>
+

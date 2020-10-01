@@ -1,0 +1,12 @@
+﻿@model İnternetProgramlamaFilmProjesi.Models.film
+@{
+    ViewBag.Title = "FilmViews";
+    Layout = "~/Views/_Girisli.cshtml";
+}
+
+<h2>Film İzleme</h2>
+<div class="col-md-8">
+    <div class="col-md-8">@Html.ActionLink("Fragman İzle", "FilmFragmans", new { id = Model.id }) | @Html.ActionLink("Film İzle", "FilmViews", new { id = Model.id })</div>
+    <div class="col-md-8"><iframe width="@Html.DisplayFor(model => model.film_width)" height="@Html.DisplayFor(model => model.film_height)" src="@Html.DisplayFor(model => model.film_iframe)" frameborder="@Html.DisplayFor(model => model.film_frameborder)" allowfullscreen></iframe></div>
+    <div class="col-md-8">HD Film İzle iyi seyirler diler.</div>
+</div>

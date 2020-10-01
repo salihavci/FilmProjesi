@@ -1,0 +1,63 @@
+﻿@model İnternetProgramlamaFilmProjesi.Models.member
+@{
+    ViewBag.Title = "MembersEdit";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<h2>Üye Düzenleme</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <div class="control-label col-md-2"><b>Ad : </b></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ad)
+                @Html.ValidationMessageFor(model => model.ad)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2"><b>Soyad : </b></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.soyad)
+                @Html.ValidationMessageFor(model => model.soyad)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-2"><b>Email : </b></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email)
+                @Html.ValidationMessageFor(model => model.email)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-2"><b>Kullanıcı Adı : </b></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.kullanici)
+                @Html.ValidationMessageFor(model => model.kullanici)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-2"><b>Parola : </b></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.parola)
+                @Html.ValidationMessageFor(model => model.parola)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Kaydet" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Listeye Geri Dön", "Members")
+</div>
+

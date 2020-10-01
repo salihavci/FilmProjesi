@@ -1,0 +1,98 @@
+﻿@model IEnumerable<İnternetProgramlamaFilmProjesi.Models.film>
+@{
+    ViewBag.Title = "Films";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<h2>Filmler</h2>
+<p>
+    @Html.ActionLink("Yeni Film Oluştur", "FilmsCreate")
+</p>
+<table class="col-md-12" style="text-align:center">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fragman_width)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fragman_height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fragman_iframe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fragman_frameborder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.film_width)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.film_height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.film_iframe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.film_frameborder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.acilklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.resim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.film_adi)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fragman_width)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fragman_height)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fragman_iframe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fragman_frameborder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.film_width)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.film_height)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.film_iframe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.film_frameborder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.acilklama)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.resim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.film_adi)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "FilmsEdit", new { id = item.id }) |
+                @Html.ActionLink("Detaylı Görüntüle", "FilmDetails", new { id = item.id }) |
+                @Html.ActionLink("Sil", "FilmsDelete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<İnternetProgramlamaFilmProjesi.Models.post>
+@{
+    ViewBag.Title = "Posts";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<h2>Yorumlar</h2>
+
+<p>
+    @Html.ActionLink("Yeni Yorum Oluştur", "PostsCreate")
+</p>
+<table class="col-md-12" style="text-align:center">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kullanici)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yorum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.onay)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kullanici)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.yorum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.onay)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "PostsEdit", new { id = item.id }) |
+                @Html.ActionLink("Detaylı Görüntüle", "PostDetails", new { id = item.id }) |
+                @Html.ActionLink("Sil", "PostsDelete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>

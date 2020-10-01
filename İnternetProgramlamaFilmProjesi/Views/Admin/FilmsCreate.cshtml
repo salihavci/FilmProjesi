@@ -1,0 +1,105 @@
+﻿@model İnternetProgramlamaFilmProjesi.Models.film
+@{
+    ViewBag.Title = "FilmsCreate";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<h2>Film Ekleme</h2>
+@using (Html.BeginForm(Html.BeginForm("FilmsCreate", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" })))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <div class="control-label col-md-2"><b>Fragman Genişliği : </b></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fragman_width)
+                @Html.ValidationMessageFor(model => model.fragman_width)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2"><b>Fragman Yüksekliği : </b></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fragman_height)
+                @Html.ValidationMessageFor(model => model.fragman_height)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-2"><b>Fragman İframe : </b></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fragman_iframe)
+                @Html.ValidationMessageFor(model => model.fragman_iframe)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-2"><b>Fragman Frameborder : </b></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fragman_frameborder)
+                @Html.ValidationMessageFor(model => model.fragman_frameborder)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-2"><b>Film Genişliği : </b></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.film_width)
+                @Html.ValidationMessageFor(model => model.film_width)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-2"><b>Film Yüksekliği : </b></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.film_height)
+                @Html.ValidationMessageFor(model => model.film_height)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-2"><b>Film İframe : </b></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.film_iframe)
+                @Html.ValidationMessageFor(model => model.film_iframe)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-2"><b>Film Frameborder : </b></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.film_frameborder)
+                @Html.ValidationMessageFor(model => model.film_frameborder)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-2"><b>Açıklama : </b></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.acilklama)
+                @Html.ValidationMessageFor(model => model.acilklama)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-2"><b>Film Resmi : </b></div>
+            <div class="col-md-10">
+                <input type="file" name="resim" id="resim" />
+                @Html.ValidationMessageFor(model => model.resim)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-2"><b>Film Adı : </b></div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.film_adi)
+                @Html.ValidationMessageFor(model => model.film_adi)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Kaydet" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Listeye Geri Dön", "Films")
+</div>
+
+

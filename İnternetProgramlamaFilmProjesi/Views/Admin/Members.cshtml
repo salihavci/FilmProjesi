@@ -1,0 +1,64 @@
+﻿@model IEnumerable<İnternetProgramlamaFilmProjesi.Models.member>
+@{
+    ViewBag.Title = "Members";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<h2>Üyeler</h2>
+
+<p>
+    @Html.ActionLink("Yeni Üye Oluştur", "MembersCreate")
+</p>
+<table class="col-md-12" style="text-align:center">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kullanici)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.parola)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.soyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kullanici)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.parola)
+            </td>
+
+            <td>
+                @Html.ActionLink("Düzenle", "MembersEdit", new { id = item.id }) |
+                @Html.ActionLink("Detaylı Görüntüle", "MemberDetails", new { id = item.id }) |
+                @Html.ActionLink("Sil", "MembersDelete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>

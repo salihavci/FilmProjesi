@@ -1,0 +1,31 @@
+﻿@model İnternetProgramlamaFilmProjesi.Models.film
+@{
+    ViewBag.Title = "FilmDetails";
+    Layout = "~/Views/_Girisli.cshtml";
+}
+
+<h2>Film Detayları</h2>
+<div class="col-md-8">
+    <table>
+        <tr>
+            <td rowspan="4">
+                <a href="~/images/@Html.DisplayFor(model => model.resim)" data-lightbox="roadtrip"><img style="border-radius:25px;" src="~/images/@Html.DisplayFor(model => model.resim)" width="250" height="300" /></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>@Html.DisplayFor(model => model.film_adi)</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.acilklama)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Fragman İzle","FilmFragmans",new { id = Model.id}) | @Html.ActionLink("Film İzle","FilmViews",new { id = Model.id})
+            </td>
+        </tr>
+    </table>
+</div>

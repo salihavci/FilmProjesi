@@ -1,0 +1,30 @@
+﻿@model İnternetProgramlamaFilmProjesi.Models.post
+@{
+    ViewBag.Title = "PostDetails";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<h2>Yorum Detaylı Görüntüleme</h2>
+<table class="col-md-12" style="text-align:left">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.kullanici) : </th>
+        <td>@Html.DisplayFor(model => model.kullanici)</td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.tarih) : </th>
+        <td>@Html.DisplayFor(model => model.tarih)</td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.yorum) : </th>
+        <td>@Html.DisplayFor(model => model.yorum)</td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.onay) : </th>
+        <td>@Html.DisplayFor(model => model.onay)</td>
+    </tr>
+</table>
+<p>
+    @Html.ActionLink("Düzenle", "PostsEdit", new { id = Model.id }) |
+    @Html.ActionLink("Listeye Geri Dön", "Posts")
+</p>
+
